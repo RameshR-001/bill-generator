@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Add this to index.html top -->
+<script>
+  if (!localStorage.getItem('authenticated')) {
+    window.location.href = 'login.html';
+  }
+</script>
+<!-- 2. Connect to Backend (Firebase Example) -->
+<!-- Add Firebase SDK to index.html -->
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+<script>
+  const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_PROJECT.firebaseapp.com",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_PROJECT.appspot.com",
+    messagingSenderId: "...",
+    appId: "..."
+  };
+  const app = firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+</script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>maloMobiles - Bill Generator</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <form id="loginForm">
+  <input type="text" id="username" placeholder="Username" required>
+  <input type="password" id="password" placeholder="Password" required>
+  <button type="submit">Login</button>
+</form>
+  <div class="container">
+    <header>
+      <h1>MALO-MOBILES</h1>
+    </header>
+
+    <div class="bill-generator">
+      <!-- Customer Details -->
+      <div class="customer-details">
+        <h2>Customer Details</h2>
+        <input type="text" id="customerName" placeholder="Customer Name" required>
+        <input type="text" id="customerPhone" placeholder="Phone Number" required>
+        <input type="text" id="customerPhone" placeholder="Address" required>
+        <input type="email" id="customerEmail" placeholder="Email (optional)">
+      </div>
+
+      <!-- Product Input -->
+      <div class="product-input">
+        <h2>Add Product</h2>
+        <select id="productCategory">
+          <option value="">Select Category</option>
+          <option value="phones">Phones</option>
+          <option value="airpods">Airpods</option>
+          <option value="watches">Watches</option>
+          <option value="services">Sales & Services</option>
+        </select>
+        <select id="productBrand">
+          <option value="">Select Brand</option>
+        </select>
+        <select id="productSeries">
+          <option value="">Select Series</option>
+        </select>
+        <select id="productColor">
+          <option value="">Select Color</option>
+        </select>
+        <input type="number" id="productQuantity" placeholder="Quantity" required>
+        <input type="number" id="productPrice" placeholder="Price" required> <!-- Manual price input -->
+        <button id="addProductBtn"><i class="fas fa-plus"></i> Add Product</button>
+      </div>
+
+      <!-- Bill Details -->
+      <div class="bill-details">
+        <h2>Bill Details</h2>
+        <div class="bill-info">
+          <p><strong>Date:</strong> <span id="billDate"></span></p>
+          <p><strong>Time:</strong> <span id="billTime"></span></p>
+        </div>
+        <table id="billTable">
+          <thead>
+            <tr>
+              <th>Product Name</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Total</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Rows will be added dynamically -->
+          </tbody>
+        </table>
+        <div class="total-section">
+          <h3>Total Amount: <span id="totalAmount">0</span></h3>
+        </div>
+        <div class="actions">
+          <button id="generateBillBtn"><i class="fas fa-file-invoice"></i> Generate Bill</button>
+          <button id="printBillBtn"><i class="fas fa-print"></i> Print Bill</button>
+          <button id="savePdfBtn"><i class="fas fa-file-pdf"></i> Save as PDF</button>
+          <button id="resetBillBtn"><i class="fas fa-trash"></i> Reset Bill</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+

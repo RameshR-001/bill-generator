@@ -1,0 +1,177 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+  }
+  
+  header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  header .logo {
+    width: 100px;
+    height: auto;
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  .bill-generator {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .customer-details {
+    margin-bottom: 20px;
+  }
+  
+  .customer-details input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 5px;
+    width: calc(33% - 10px);
+  }
+  
+  .product-input {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .product-input select,
+  .product-input input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex: 1;
+  }
+  
+  .product-input button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .product-input button:hover {
+    background-color: #218838;
+  }
+  
+  .bill-details table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .bill-details th,
+  .bill-details td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+  }
+  
+  .bill-details th {
+    background-color: #f8f9fa;
+  }
+  
+  .bill-details td button {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .bill-details td button:hover {
+    background-color: #c82333;
+  }
+  
+  .total-section {
+    text-align: right;
+    margin-bottom: 20px;
+  }
+  
+  .actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+  }
+  
+  .actions button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .actions button i {
+    font-size: 16px;
+  }
+  
+  #generateBillBtn {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  #generateBillBtn:hover {
+    background-color: #0056b3;
+  }
+
+body.dark {
+  background-color: #121212;
+  color: #f5f5f5;
+}
+  
+  #printBillBtn {
+    background-color: #17a2b8;
+    color: #fff;
+  }
+  
+  #printBillBtn:hover {
+    background-color: #138496;
+  }
+  
+  #savePdfBtn {
+    background-color: #ffc107;
+    color: #000;
+  }
+  
+  #savePdfBtn:hover {
+    background-color: #e0a800;
+  }
+  
+  #resetBillBtn {
+    background-color: #6c757d;
+    color: #fff;
+  }
+  
+  #resetBillBtn:hover {
+    background-color: #5a6268;
+  }
+
+ 
